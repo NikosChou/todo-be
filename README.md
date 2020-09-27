@@ -11,7 +11,7 @@ For building and running the application you need:
 
 `./mvnw spring-boot:run`
 
-Service listens on http://localhost:8080
+Service listens on http://localhost:9000
 
 ## Build JAR
 
