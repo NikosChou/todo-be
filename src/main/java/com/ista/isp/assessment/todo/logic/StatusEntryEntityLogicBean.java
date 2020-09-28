@@ -54,6 +54,7 @@ public class StatusEntryEntityLogicBean {
         id.setItemEntity(itemEntityRepository.findByIdOrError(item));
         id.setStatusEntity(statusEntityRepository.findByIdOrError(status));
         statusEntryEntity.setId(id);
+        statusEntryEntity.setCreatedAt(LocalDateTime.now());
         statusEntryEntityRepository.save(statusEntryEntity);
         return itemConverter.createFrom(itemEntityRepository.findByIdOrError(item));
     }

@@ -1,5 +1,7 @@
 package com.ista.isp.assessment.todo.model;
 
+import com.ista.isp.assessment.todo.enums.ItemStatusEnum;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -62,6 +64,10 @@ public class Item extends AbstractDto {
 
     public void setStatuses(List<StatusEntry> statuses) {
         this.statuses = statuses;
+    }
+
+    public Boolean getCompleted() {
+        return statuses.stream().anyMatch(s -> ItemStatusEnum.COMPLETED.getValue().equals(s.getName()));
     }
 
     @Override
