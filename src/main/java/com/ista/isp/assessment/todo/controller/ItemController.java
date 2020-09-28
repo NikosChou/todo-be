@@ -21,10 +21,9 @@ public class ItemController {
     private ItemEntityLogicBean itemEntityLogicBean;
 
     @GetMapping
-    public ItemsWebResponse getItems(@RequestParam("status") Optional<List<Integer>> statuses,
-                                     @RequestParam(value = "p", defaultValue = "0") Integer page,
+    public ItemsWebResponse getItems(@RequestParam(value = "p", defaultValue = "0") Integer page,
                                      @RequestParam(value = "e", defaultValue = "10") Integer elements) {
-        return itemEntityLogicBean.findAll(statuses, page, elements);
+        return itemEntityLogicBean.findAll(page, elements);
     }
 
     @PostMapping
