@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum ItemStatusEnum implements EnumWithId<Integer> {
     //@formatter:off
     CREATED                 (10,  "created"),
-    COMPLETED           (20,  "completed");
+    COMPLETED               (20,  "completed");
     //@formatter:on
 
     ItemStatusEnum(int id, String value) {

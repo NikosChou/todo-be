@@ -40,7 +40,7 @@ public class ItemEntityLogicBean {
     }
 
     public ItemsWebResponse findAll(Optional<List<Integer>> statuses, Integer page, Integer elements) {
-        final Page<ItemEntity> pages = itemEntityRepository.findAll(PageRequest.of(page, elements));
+        final Page<ItemEntity> pages = itemEntityRepository.findAllByOrderByCreatedAtDesc(PageRequest.of(page, elements));
         final List<Item> items = pages.stream()
                 .map(itemConverter::createFrom)
                 .collect(Collectors.toList());

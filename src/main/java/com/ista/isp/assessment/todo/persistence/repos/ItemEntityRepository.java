@@ -13,7 +13,7 @@ import java.util.UUID;
 @Repository
 public interface ItemEntityRepository extends PagingAndSortingRepository<ItemEntity, UUID> {
 
-    Page<ItemEntity> findAll(Pageable pageable);
+    Page<ItemEntity> findAllByOrderByCreatedAtDesc(Pageable pageable);
 
     Optional<ItemEntity> findById(UUID id);
 
